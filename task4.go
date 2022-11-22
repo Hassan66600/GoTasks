@@ -1,4 +1,4 @@
-package main
+package main //comment
 
 import (
 	"crypto/sha256"
@@ -7,14 +7,14 @@ import (
 	"strings"
 )
 
-type Student struct {
+type Student struct { //studentsss
 	rollnumber int
 	name       string
 	address    string
 	course     []string
 }
 
-func NewStudent(rollno int, name string, address string, crs []string) *Student {
+func NewStudent(rollno int, name string, address string, crs []string) *Student { //newstd
 	s := new(Student)
 	s.rollnumber = rollno
 	s.name = name
@@ -23,16 +23,16 @@ func NewStudent(rollno int, name string, address string, crs []string) *Student 
 	return s
 }
 
-type StudentList struct {
+type StudentList struct { //list
 	list []*Student
 }
 
-func (ls *StudentList) CreateStudent(rollno int, name string, address string, crs []string) *Student {
+func (ls *StudentList) CreateStudent(rollno int, name string, address string, crs []string) *Student { //come
 	st := NewStudent(rollno, name, address, crs)
 	ls.list = append(ls.list, st)
 	return st
 }
-func PrintStudentList(ls *StudentList) {
+func PrintStudentList(ls *StudentList) { //comm
 	for p := range ls.list {
 		fmt.Printf("%s List %d %s\n", strings.Repeat("=", 25), p+1, strings.Repeat("=", 25))
 		fmt.Printf("student rollno         %d\n", ls.list[p].rollnumber)
